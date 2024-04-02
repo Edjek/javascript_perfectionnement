@@ -7,7 +7,7 @@
     Cet écouteur est appelé chaque fois que l'événement spécifié se produit sur l'élément.
     ---------------------------------------------
     La methode addEventListener() prend 2 paramètres:
-    1. Le nom de l'événement (click, mouseover, mouseout, keyup, keydown, keypress, submit, change, ...)
+    1. Le nom de l'événement (click, dblclick, submit, input, mouseenter, mouseover, mouseout, keydown, keyup, change, ...)
     2. Une fonction callback qui sera appelée à chaque fois que l'événement se produit
 */
 
