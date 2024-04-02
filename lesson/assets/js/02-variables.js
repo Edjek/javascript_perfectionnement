@@ -14,8 +14,8 @@ uneVariable = 'je suis une variable';
 let greetingMessage = 'Hello, world!';
 
 // On peut changer la valeur d'une variable
-uneVariable = hello;
-console.log(hello);
+uneVariable = greetingMessage;
+console.log(uneVariable);
 
 // Le mot clé const permet de déclarer une constante
 // Vous ne pouvez pas modifier une constante (on dit qu'elle est immuable)
