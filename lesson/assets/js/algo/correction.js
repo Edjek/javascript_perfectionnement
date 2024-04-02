@@ -292,12 +292,12 @@ function meteo(saison, temperature) {
 meteo('hiver', 5); //Nous sommes en hiver et il fait 5 degrés
 meteo('printemps', 0); //Nous sommes au printemps et il fait 0 degrés
 
-/* 
+/*
     Créer un objet sangoku
         firstName => san
         lastName => goku
         children => array (gohan et goten)
-        age => 
+        age => 41
         presention =>() (
             retourne ' bonjour je m'appelle San Goku et jai x enfant
         )
@@ -307,8 +307,9 @@ const sangoku = {
     firstName: 'san',
     lastName: 'goku',
     children: ['gohan', 'goten'],
+    age: 41,
     presentation: function () {
-        return `bonjour je m'appelle ${sangoku.firstName} ${sangoku.lastName} et j'ai ${sangoku.children.length} enfants`;
+        return `bonjour je m'appelle ${this.firstName} ${this.lastName} et j'ai ${this.children.length} enfants`;
     },
 };
 

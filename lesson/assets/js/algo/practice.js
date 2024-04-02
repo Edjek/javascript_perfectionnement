@@ -118,12 +118,12 @@ let i = g * h;
         Affiche Nous sommes en hiver et il fait -1 degré
 */
 
-/* 
+/*
     Créer un objet sangoku
         nom => san
         prenom => goku
         enfant => array (gohan et goten)
-        age => 
+        age => 41
         presention =>() (
             retourne ' bonjour je m'appelle San Goku et jai x enfant
         )
