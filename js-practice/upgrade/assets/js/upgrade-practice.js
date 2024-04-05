@@ -234,11 +234,15 @@ createSelectofActors(actors);
 const selectActors = document.querySelector('#select-actors');
 
 selectActors.addEventListener('change', function (e) {
+    const actorInfo = document.querySelector('#actor-card');
+    if (actorInfo) {
+        actorInfo.remove();
+    }
 
-    
     for (let actor of actors) {
         if (actor.lastName == e.target.value) {
             const card = document.createElement('div');
+            card.id = 'actor-card';
 
             const title = document.createElement('h3');
             title.textContent = `${actor.firstName} ${actor.lastName}`;
