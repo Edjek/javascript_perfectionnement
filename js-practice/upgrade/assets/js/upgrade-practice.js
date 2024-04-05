@@ -1,11 +1,26 @@
 // Créer une fonction qui retourne la somme de deux nombres
+function add(x, y) {
+    return x + y;
+}
+
+console.log(add(90, 23));
 
 // Créer une fonction sumTo qui permet de calculer la somme des entiers de 1 à n.
 // (1 + 2 + 3 + ... + n)
+function sumTo(x) {
+    let sum = 0;
+    for (let i = 0; i <= x; i++) {
+        sum = sum + i;
+    }
+    return sum;
+}
 
 console.log(sumTo(100)); // Résultat attendu: 5050
 
 // Utiliser une boucle pour afficher les nombres de 1 à 10
+for (let i = 0; i < 10; i++) {
+    // console.log(i);
+}
 
 // Tableau de noms d'acteurs
 const acteurs = [
@@ -22,8 +37,28 @@ const acteurs = [
 ];
 
 // Affichage des noms d'acteurs à l'aide de la boucle for, for...of, forEach
+for (let i = 0; i < acteurs.length; i++) {
+    // console.log(acteurs[i]);
+}
 
-// Créer un objet personn avec un nom, un age et une ville de naissance, afficher chaque clé et valeur dans la console
+for (let acteur of acteurs) {
+    // console.log(acteur);
+}
+
+acteurs.forEach((acteur) => {
+    // console.log(acteur);
+});
+
+// Créer un objet person avec un nom, un age et une ville de naissance, afficher chaque clé et valeur dans la console
+const person = {
+    nom: 'rachid',
+    age: 40,
+    city: 'paris',
+};
+
+for (let key in person) {
+    // console.log(person[key]);
+}
 
 // Tableau d'objets d'acteurs avec leurs informations
 const actors = [
@@ -109,14 +144,82 @@ const actors = [
     },
 ];
 
-// Affichage des nom et prénom des acteurs
+// Afficher les nom et prénom des acteurs
+for (let i = 0; i < actors.length; i++) {
+    // console.log(actors[i].lastName, actors[i].firstName);
+}
 
-// Affichage des noms et prénoms des acteurs qui ont moins de 40 ans
+for (const actor of actors) {
+    // console.log(actor.lastName, actor.firstName);
+}
 
-//  Cibler le bouton dans la page HTML et ajouter un écouteur d'événement pour afficher un message dans la console
+actors.forEach((actor) => {
+    // console.log(actor.lastName, actor.firstName);
+});
 
-//  Modifier le code pour afficher un message dans une balise <p> en bas de la balise qui à l'id user-container au lieu de la console
+// Afficher les noms et prénoms des acteurs qui ont moins de 40 ans
 
-//  Modifier le code pour creer une div avec la classe actors et ajouter un titre h3 qui contient `PRENOM NOM : AGE` et un paragraphe contenant la description à partir du tableau d'objets actors et les afficher dans le DOM dans la div qui a l'id actors-container
+actors.forEach((actor) => {
+    if (actor.age < 40) {
+        console.log(
+            'Acteurs qui ont moins de 40 ans! : ' + actor.lastName,
+            actor.firstName
+        );
+    }
+});
+// Cibler le bouton dans la page HTML et ajouter un écouteur d'événement pour afficher un message dans la console
+const btn = document.querySelector('#action');
+
+btn.addEventListener('click', () => {
+    console.log('test du clique sur mon bouton');
+});
+
+// Modifier le code pour afficher un message dans une balise <p> en bas de la balise qui à l'id user-container au lieu de la console
+btn.addEventListener('click', () => {
+    const element = document.createElement('p');
+    element.textContent = 'salut, le monde! ';
+
+    const strong = document.createElement('strong');
+    strong.textContent = 'Je suis créé en javascript';
+
+    element.append(strong);
+
+    const userContainer = document.querySelector('#user-container');
+    userContainer.append(element);
+});
+
+// Modifier le code pour creer une div avec la classe actors et ajouter un titre h3 qui contient `PRENOM NOM : AGE` et un paragraphe p contenant la description à partir du tableau d'objets actors et les afficher dans le DOM dans la div qui a l'id actors-container
+btn.addEventListener('click', function () {
+    const actorsContent = document.createElement('div');
+    actorsContent.classList.add('actors');
+
+    for (let actor of actors) {
+        const title = document.createElement('h3');
+        title.textContent = `${actor.firstName} ${actor.lastName} : ${actor.age}`;
+
+        const paragraphe = document.createElement('p');
+        paragraphe.textContent = actor.description;
+
+        actorsContent.append(title, paragraphe);
+    }
+
+    const actorsContainer = document.querySelector('#actors-container');
+
+    actorsContainer.append(actorsContent);
+});
 
 // Créer une fonction qui prend un tableau de noms et crée une liste déroulante (select, option) dans le DOM dans la div qui a l'id user-container
+function createSelectofActors(array) {
+    const select = document.createElement('select');
+    array.forEach((el) => {
+        const option = document.createElement('option');
+        option.textContent = `${el.firstName} ${el.lastName}`;
+        option.value = el.lastName;
+
+        select.append(option);
+    });
+    const userContainer = document.querySelector('#user-container');
+    userContainer.append(select);
+}
+
+createSelectofActors(actors);
