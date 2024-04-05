@@ -38,7 +38,7 @@ const acteurs = [
 ];
 
 // Affichage des noms d'acteurs à l'aide de la boucle for, for...of, forEach
-console.log("----------------- Noms d'acteurs : -----------------");
+console.log('----------------- Noms des acteurs : -----------------');
 acteurs.forEach((acteur, index) => {
     console.log(`${index + 1}. ${acteur}`);
 });
@@ -165,40 +165,38 @@ button.addEventListener('click', () => {
 });
 
 //  Modifier le code pour afficher un message dans une balise <p> au lieu de la console
-let button2 = document.querySelector('#action');
-let p = document.createElement('p');
-
-button2.addEventListener('click', () => {
+button.addEventListener('click', () => {
+    let p = document.createElement('p');
     p.textContent = 'Hello, World!';
     document.querySelector('main').append(p);
 });
 
-//  Modifier le code pour creer une div avec la classe actors et ajouter un titre h3 qui contient `PRENOM NOM : AGE` et un paragraphe contenant la description à partir du tableau d'objets actors et les afficher dans le DOM
+// Modifier le code pour creer une div avec la classe actors y inserer un titre h3 qui contient `PRENOM NOM : AGE` et un paragraphe p contenant la description à partir du tableau d'objets actors
+// Les afficher dans le DOM dans la div qui a l'id actors-container
 let div = document.createElement('div');
 div.classList.add('actors');
 
 for (let actor of actors) {
-    let h3 = document.createElement('h3');
-    h3.textContent = `${actor.firstName} ${actor.lastName}: ${actor.nationality}`;
+    let title = document.createElement('h3');
+    title.textContent = `${actor.firstName} ${actor.lastName}: ${actor.nationality}`;
 
-    let p2 = document.createElement('p');
-    p2.textContent = actor.description;
+    let description = document.createElement('p');
+    description.textContent = actor.description;
 
-    div.append(h3, p2);
+    div.append(title, description);
 }
 
 document.querySelector('#actors-container').append(div);
 
-// Créer une fonction qui prend un tableau de noms et crée une liste déroulante (select, option) dans le DOM
-let names2 = ['Alice', 'Bob', 'Charlie', 'David', 'Emma'];
-
-function createSelect(actors) {
+// Créer une fonction qui prend le tableau d'acteurs en parametre
+// Créer une liste déroulante (select, option) qui affiche le nom et prénom des acteurs  dans le DOM dans la div qui a l'id user-container
+function createSelect(array) {
     let select = document.createElement('select');
 
-    for (let actor of actors) {
+    for (let element of array) {
         let option = document.createElement('option');
-        option.textContent = `${actor.firstName} ${actor.lastName}`;
-        option.value = actor.lastName;
+        option.textContent = `${element.firstName} ${element.lastName}`;
+        option.value = element.lastName;
         select.append(option);
     }
 

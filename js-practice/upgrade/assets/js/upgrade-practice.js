@@ -158,7 +158,6 @@ actors.forEach((actor) => {
 });
 
 // Afficher les noms et prénoms des acteurs qui ont moins de 40 ans
-
 actors.forEach((actor) => {
     if (actor.age < 40) {
         console.log(
@@ -167,6 +166,7 @@ actors.forEach((actor) => {
         );
     }
 });
+
 // Cibler le bouton dans la page HTML et ajouter un écouteur d'événement pour afficher un message dans la console
 const btn = document.querySelector('#action');
 
@@ -176,19 +176,25 @@ btn.addEventListener('click', () => {
 
 // Modifier le code pour afficher un message dans une balise <p> en bas de la balise qui à l'id user-container au lieu de la console
 btn.addEventListener('click', () => {
-    const element = document.createElement('p');
-    element.textContent = 'salut, le monde! ';
+    const recup = document.querySelector('#my-paragraphe');
 
-    const strong = document.createElement('strong');
-    strong.textContent = 'Je suis créé en javascript';
+    if (recup == null) {
+        const element = document.createElement('p');
+        element.textContent = 'salut, le monde! ';
+        element.id = 'my-paragraphe';
 
-    element.append(strong);
+        const strong = document.createElement('strong');
+        strong.textContent = 'Je suis créé en javascript';
 
-    const userContainer = document.querySelector('#user-container');
-    userContainer.append(element);
+        element.append(strong);
+
+        const userContainer = document.querySelector('#user-container');
+        userContainer.append(element);
+    }
 });
 
-// Modifier le code pour creer une div avec la classe actors et ajouter un titre h3 qui contient `PRENOM NOM : AGE` et un paragraphe p contenant la description à partir du tableau d'objets actors et les afficher dans le DOM dans la div qui a l'id actors-container
+// Modifier le code pour creer une div avec la classe actors y inserer un titre h3 qui contient `PRENOM NOM : AGE` et un paragraphe p contenant la description à partir du tableau d'objets actors
+// Les afficher dans le DOM dans la div qui a l'id actors-container
 btn.addEventListener('click', function () {
     const actorsContent = document.createElement('div');
     actorsContent.classList.add('actors');
@@ -204,13 +210,14 @@ btn.addEventListener('click', function () {
     }
 
     const actorsContainer = document.querySelector('#actors-container');
-
     actorsContainer.append(actorsContent);
 });
 
-// Créer une fonction qui prend un tableau de noms et crée une liste déroulante (select, option) dans le DOM dans la div qui a l'id user-container
+// Créer une fonction qui prend le tableau d'acteurs en parametre
+// Créer une liste déroulante (select, option) qui affiche le nom et prénom des acteurs  dans le DOM dans la div qui a l'id user-container
 function createSelectofActors(array) {
     const select = document.createElement('select');
+    select.id = 'select-actors';
     array.forEach((el) => {
         const option = document.createElement('option');
         option.textContent = `${el.firstName} ${el.lastName}`;
@@ -223,3 +230,26 @@ function createSelectofActors(array) {
 }
 
 createSelectofActors(actors);
+
+const selectActors = document.querySelector('#select-actors');
+
+selectActors.addEventListener('change', function (e) {
+
+    
+    for (let actor of actors) {
+        if (actor.lastName == e.target.value) {
+            const card = document.createElement('div');
+
+            const title = document.createElement('h3');
+            title.textContent = `${actor.firstName} ${actor.lastName}`;
+
+            const description = document.createElement('p');
+            description.textContent = actor.description;
+
+            card.append(title, description);
+
+            const userContainer = document.querySelector('#user');
+            userContainer.append(card);
+        }
+    }
+});
