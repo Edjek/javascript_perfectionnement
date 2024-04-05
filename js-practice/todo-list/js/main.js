@@ -1,4 +1,3 @@
-// TODO List
 const submit = document.querySelector('#submit');
 const todoList = document.querySelector('#todo-list');
 
