@@ -15,6 +15,9 @@ console.log(text.charAt(0));
 // Afficher le dernier caractère de la chaine de caractères en console
 console.log(text.charAt(text.length - 1));
 
+// Supprimer les espaces en début et fin de chaine de caractères et l'afficher en console
+console.log(text.trim());
+
 // Afficher les 10 premiers caractères de la chaine de caractères en console
 console.log(text.slice(0, 10));
 

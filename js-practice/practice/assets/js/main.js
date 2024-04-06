@@ -3,13 +3,15 @@
 // ? Manipulation de chaines de caractères trouvez sur google les fonctions vous permettant d'obtenir le resultat demandé
 // * https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String
 
-// Créer une variable avec le texte suivant: "Je suis une chaine de caractères"
+// Créer une variable avec le texte suivant: "Je suis une chaine de caractères "
 
 // Afficher la longueur de la chaine de caractères en console
 
 // Afficher le premier caractère de la chaine de caractères en console
 
 // Afficher le dernier caractère de la chaine de caractères en console
+
+// Supprimer les espaces en début et fin de chaine de caractères et l'afficher en console
 
 // Afficher les 10 premiers caractères de la chaine de caractères en console
 
