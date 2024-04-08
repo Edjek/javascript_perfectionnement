@@ -171,7 +171,7 @@ actors.forEach((actor) => {
 const btn = document.querySelector('#action');
 
 btn.addEventListener('click', () => {
-    console.log('test du clique sur mon bouton');
+    // console.log('test du clique sur mon bouton');
 });
 
 // Modifier le code pour afficher un message dans une balise <p> en bas de la balise qui à l'id user-container au lieu de la console
@@ -196,21 +196,25 @@ btn.addEventListener('click', () => {
 // Modifier le code pour creer une div avec la classe actors y inserer un titre h3 qui contient `PRENOM NOM : AGE` et un paragraphe p contenant la description à partir du tableau d'objets actors
 // Les afficher dans le DOM dans la div qui a l'id actors-container
 btn.addEventListener('click', function () {
-    const actorsContent = document.createElement('div');
-    actorsContent.classList.add('actors');
+    const listActors = document.querySelector('#list-actors');
+    if (listActors == null) {
+        const actorsContent = document.createElement('div');
+        actorsContent.id = 'list-actors';
+        actorsContent.classList.add('actors');
 
-    for (let actor of actors) {
-        const title = document.createElement('h3');
-        title.textContent = `${actor.firstName} ${actor.lastName} : ${actor.age}`;
+        for (let actor of actors) {
+            const title = document.createElement('h3');
+            title.textContent = `${actor.firstName} ${actor.lastName} : ${actor.age}`;
 
-        const paragraphe = document.createElement('p');
-        paragraphe.textContent = actor.description;
+            const paragraphe = document.createElement('p');
+            paragraphe.textContent = actor.description;
 
-        actorsContent.append(title, paragraphe);
+            actorsContent.append(title, paragraphe);
+        }
+
+        const actorsContainer = document.querySelector('#actors-container');
+        actorsContainer.append(actorsContent);
     }
-
-    const actorsContainer = document.querySelector('#actors-container');
-    actorsContainer.append(actorsContent);
 });
 
 // Créer une fonction qui prend le tableau d'acteurs en parametre
