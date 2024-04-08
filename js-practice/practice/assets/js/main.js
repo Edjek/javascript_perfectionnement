@@ -42,6 +42,8 @@ const pokemons = [
 
 // Transformer le tableau pokemons en chaine de caractères avec les noms des pokemons séparés par une virgule et un espace et l'afficher en console
 
+// Inverser les cases du tableau
+
 // TODO EXERCICE
 
 const newSeries = [
