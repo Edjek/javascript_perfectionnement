@@ -1,32 +1,25 @@
 // TODO EXERCICE :
 
 // ? Manipulation de chaines de caractères trouvez sur google les fonctions vous permettant d'obtenir le resultat demandé
-<<<<<<< HEAD
-
 // * https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String
 
-// Créer une variable avec le texte suivant: "Je suis une chaine de caractères "
-const text = 'Je suis une chaine de caractères ';
-const message = new String('Je suis une chaine de caractères');
+// Créer une variable avec le texte suivant: "Je suis une chaine de caractères"
+const text = 'Je suis une chaine de caractères';
 
 // Afficher la longueur de la chaine de caractères en console
 console.log(text.length);
 
 // Afficher le premier caractère de la chaine de caractères en console
 console.log(text.charAt(0));
-console.log(text[0]);
-console.log(text.at(0));
 
 // Afficher le dernier caractère de la chaine de caractères en console
-console.log(text.charAt(text.length - 2));
-console.log(text.at(-1));
+console.log(text.charAt(text.length - 1));
 
 // Supprimer les espaces en début et fin de chaine de caractères et l'afficher en console
 console.log(text.trim());
 
 // Afficher les 10 premiers caractères de la chaine de caractères en console
 console.log(text.slice(0, 10));
-console.log(text.substring(0, 10));
 
 // Mettre la chaine de caractères en majuscules et l'afficher en console
 console.log(text.toUpperCase());
@@ -42,31 +35,6 @@ console.log(text.replaceAll(' ', '_'));
 
 // Transformer la chaine de caractères en tableau contenant chaque mots et l'afficher en console
 console.log(text.split(' '));
-=======
-// * https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String
-
-// Créer une variable avec le texte suivant: "Je suis une chaine de caractères "
-
-// Afficher la longueur de la chaine de caractères en console
-
-// Afficher le premier caractère de la chaine de caractères en console
-
-// Afficher le dernier caractère de la chaine de caractères en console
-
-// Supprimer les espaces en début et fin de chaine de caractères et l'afficher en console
-
-// Afficher les 10 premiers caractères de la chaine de caractères en console
-
-// Mettre la chaine de caractères en majuscules et l'afficher en console
-
-// Mettre la chaine de caractères en minuscules et l'afficher en console
-
-// Remplacer "chaine de caractère" par "string" dans la phrase et l'afficher en console
-
-// Afficher la chaine de caractères en console en remplaçant chaque espace par un underscore
-
-// Transformer la chaine de caractères en tableau contenant chaque mots et l'afficher en console
->>>>>>> 0fbac316920c9280a800ed4ff30d40e963a1d051
 
 const pokemons = [
     'Bulbasaur',
@@ -82,49 +50,12 @@ const pokemons = [
 ];
 
 // Afficher en console le dernier élément du tableau pokemons
-<<<<<<< HEAD
 console.log(pokemons[pokemons.length - 1]);
 
 // Transformer le tableau pokemons en chaine de caractères avec les noms des pokemons séparés par une virgule et un espace et l'afficher en console
 console.log(pokemons.join(', '));
-console.log(pokemons.toString());
-
-// Inverser les cases du tableau
-console.log(pokemons.reverse());
-
-// Nodejs
-// kayak
-
-// creer une fonction checkPalindrom qui prend en parametre une chaine de caractere
-// Verifier si c'est un palindrome
-
-// si oui ça retourne true
-// sinon ca retourne false
-
-function checkPalindrom(string) {
-    let ispalindrom = string;
-    ispalindrom = ispalindrom.split('');
-    ispalindrom.reverse();
-    ispalindrom = ispalindrom.join('');
-
-    if (string === ispalindrom) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-const response = checkPalindrom('kayak');
-console.log(response);
-=======
-
-// Transformer le tableau pokemons en chaine de caractères avec les noms des pokemons séparés par une virgule et un espace et l'afficher en console
-
-// Inverser les cases du tableau
->>>>>>> 0fbac316920c9280a800ed4ff30d40e963a1d051
 
 // TODO EXERCICE
-
 const newSeries = [
     {
         title: 'The Crown',
@@ -169,7 +100,6 @@ const newSeries = [
 ];
 
 // Afficher en console le titre de chaque série dans le tableau newSeries
-<<<<<<< HEAD
 newSeries.forEach((serie) => {
     console.log(serie.title);
 });
@@ -183,64 +113,51 @@ newSeries.forEach((serie) => {
 
 // Afficher en console le titre des séries qui ont moins de 3 saisons et une note IMDb supérieure à 8.5
 newSeries.forEach((serie) => {
-    if (serie.imdbRating > 8.5 && serie.seasons < 3) {
+    if (serie.seasons < 3 && serie.imdbRating > 8.5) {
         console.log(serie.title);
     }
 });
 
 // Afficher en console le titre et les 60 premiers caractères du synopsis
 newSeries.forEach((serie) => {
-    console.log(`${serie.title} synopsys : ${serie.synopsis.slice(0, 60)}...`);
+    console.log(serie.title, serie.synopsis.slice(0, 60));
 });
-=======
-
-// Afficher en console le titre des series avec une note IMDb supérieure à 8.5
-
-// Afficher en console le titre des séries qui ont moins de 3 saisons et une note IMDb supérieure à 8.5
-
-// Afficher en console le titre et les 60 premiers caractères du synopsis
->>>>>>> 0fbac316920c9280a800ed4ff30d40e963a1d051
 
 // Créer une fonction createSerieCard() qui prend un objet série en paramètre et retourne une card HTML avec les informations de la série
 // La card sera une div avec une classe 'card' et contiendra les informations de la série
 // La carte doit contenir un titre h3, un paragraphe pour le genre, un paragraphe pour le synopsis, un paragraphe pour le nombre de saisons et un paragraphe pour la note IMDb
-<<<<<<< HEAD
-function createSerieCard(obj) {
+
+function createSerieCard(serie) {
     const card = document.createElement('div');
     card.classList.add('card');
 
-    const title = document.createElement('h3');
-    title.textContent = obj.title;
+    const cardTitle = document.createElement('h3');
+    cardTitle.textContent = serie.title;
 
-    const genre = document.createElement('p');
-    genre.textContent = obj.genre;
+    const cardGenre = document.createElement('p');
+    cardGenre.textContent = serie.genre;
 
-    const synopsis = document.createElement('p');
-    synopsis.textContent = obj.synopsis;
+    const cardSynopsis = document.createElement('p');
+    cardSynopsis.textContent = serie.synopsis;
 
-    const seasons = document.createElement('p');
-    seasons.textContent = `Saisons: ${obj.seasons}`;
+    const cardSaisons = document.createElement('p');
+    cardSaisons.textContent = `Saisons: ${serie.seasons}`;
 
-    const imdbRating = document.createElement('p');
-    imdbRating.textContent = `Note IMDb: ${obj.imdbRating}`;
+    const cardNote = document.createElement('p');
+    cardNote.textContent = `Note IMDb: ${serie.imdbRating}`;
 
-    card.append(title, genre, synopsis, seasons, imdbRating);
+    card.append(cardTitle, cardGenre, cardSynopsis, cardSaisons, cardNote);
 
     return card;
 }
 
 // Pour chaque série dans le tableau newSeries, créer une carte et l'ajouter à la section #new-series
+const seriesContainer = document.querySelector('#new-series');
+
 newSeries.forEach((serie) => {
     const card = createSerieCard(serie);
-
-    const newSeriesContainer = document.querySelector('#new-series');
-    newSeriesContainer.append(card);
-    // ajouter dans le DOM
+    seriesContainer.append(card);
 });
-=======
-
-// Pour chaque série dans le tableau newSeries, créer une carte et l'ajouter à la section #new-series
->>>>>>> 0fbac316920c9280a800ed4ff30d40e963a1d051
 
 // TODO EXERCICE
 
@@ -290,23 +207,18 @@ const popularSeries = [
 // Créer un élément ul avec la class 'popular-list'
 // Ajouter un élément li pour le titre de chaque série dans le tableau popularSeries
 // Ajouter la liste à la section #popular
-
-<<<<<<< HEAD
-const listSeriespopular = document.createElement('ul');
-listSeriespopular.classList.add('popular-list');
-listSeriespopular.id = 'popular-list';
+const listPopular = document.createElement('ul');
+listPopular.classList.add('popular-list');
 
 popularSeries.forEach((serie) => {
     const listItem = document.createElement('li');
     listItem.textContent = serie.title;
-    listSeriespopular.append(listItem);
+    listPopular.append(listItem);
 });
 
-const seriesPopularContainer = document.querySelector('#popular');
-seriesPopularContainer.append(listSeriespopular);
+const popularContainer = document.querySelector('#popular');
+popularContainer.append(listPopular);
 
-=======
->>>>>>> 0fbac316920c9280a800ed4ff30d40e963a1d051
 // TODO EXERCICE
 
 const mustWatchSeries = [
@@ -355,8 +267,6 @@ const mustWatchSeries = [
 // Créer un élément select avec la class 'select-series'
 // Avec un element option avec le titre de chaque série dans le tableau mustWatchSeries
 // Ajouter le select à la section #must-watch
-
-<<<<<<< HEAD
 const selectSeriesMustWatch = document.createElement('select');
 selectSeriesMustWatch.classList.add('select-series');
 
@@ -369,9 +279,22 @@ mustWatchSeries.forEach((serie) => {
 const mustWatchContainer = document.querySelector('#must-watch');
 mustWatchContainer.append(selectSeriesMustWatch);
 
-=======
->>>>>>> 0fbac316920c9280a800ed4ff30d40e963a1d051
 // TODO EXERCICE
 // Ajouter un écouteur d'événements 'change' sur le select
 // Lorsque l'utilisateur sélectionne une série, afficher une card avec la fonction déjà créé pour cette série dans la section #must-watch
 // Si une carte est déjà affichée, la remplacer par la nouvelle série sélectionnée
+const selectSeries = document.querySelector('.select-series');
+
+selectSeries.addEventListener('change', (event) => {
+    const cardToRemove = mustWatchContainer.querySelector('.selected');
+    if (cardToRemove) {
+        cardToRemove.remove();
+    }
+    mustWatchSeries.forEach((serie) => {
+        if (serie.title === event.target.value) {
+            const card = createSerieCard(serie);
+            card.classList.add('selected');
+            mustWatchContainer.append(card);
+        }
+    });
+});
