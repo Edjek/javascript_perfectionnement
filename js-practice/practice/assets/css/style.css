@@ -42,12 +42,13 @@ nav {
 
 nav a {
     color: #fff;
+    font-size: 1.5rem;
     text-decoration: none;
+    text-underline-offset: 4px;
 }
 
 nav a:hover {
-    background-color: #fff;
-    color: var(--secondary-color);
+    text-decoration: underline;
 }
 
 /* SECTION */
