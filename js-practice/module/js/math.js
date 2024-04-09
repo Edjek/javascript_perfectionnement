@@ -13,4 +13,3 @@ export function add(x, y) {
 function substract(x, y) {
     return x - y;
 }
-
