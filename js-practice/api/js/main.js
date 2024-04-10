@@ -1,4 +1,4 @@
-import { displayPosts } from "./displayPosts.js";
+import { displayPosts } from './displayPosts.js';
 
 /* --------------------------- AJAX --------------------------- */
 
@@ -31,39 +31,16 @@ fetch('./js/data/data.json')
 // Récupérer les données de l'api https://jsonplaceholder.typicode.com/posts
 // Afficher les données dans la page
 
-
 fetch('https://jsonplaceholder.typicode.com/posts')
     .then((posts) => {
         return posts.json();
     })
     .then((posts) => {
-        displayPosts(posts)
+        displayPosts(posts);
     })
     .catch((error) => {
         console.log(error);
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const foreachPerso = function (array, pull) {
 //     for (let i = 0; i < array.length; i++) {
@@ -76,4 +53,3 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 // })
 
 // const resp = add();
-
