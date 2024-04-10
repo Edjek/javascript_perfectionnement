@@ -1058,7 +1058,7 @@ console.log(allFruits);
 // ?Les fonctions sur les tableaux modernes sont des fonctions qui prennent en paramètre une fonction de rappel (callback).
 // La plupart retournent un nouveau tableau sans modifier l'original.
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const numbers = [40, 1, 120, 3, 5, 6, 7, 8, 9];
 
 // * forEach() est une méthode JavaScript qui permet d'itérer sur les éléments d'un tableau
 // Ne retourne pas de nouveau tableau et permet d'exécuter une fonction donnée pour chaque élément.
@@ -1094,8 +1094,8 @@ const allEvenNumbers = numbers.every((number) => number % 2 === 0);
 console.log(allEvenNumbers);
 
 // * sort() est une méthode JavaScript qui permet de trier les éléments d'un tableau.
-const sortedNumbers = numbers.sort((a, b) => a - b);
-console.log(sortedNumbers);
+const sortedNumbers = numbers.sort((a, b) => b - a);
+console.log(sortedNumbers); 
 
 /* --------------------------- 24 - AJAX --------------------------- */
 

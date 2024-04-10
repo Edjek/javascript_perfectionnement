@@ -1,3 +1,5 @@
+import { displayPosts } from "./displayPosts.js";
+
 /* --------------------------- AJAX --------------------------- */
 
 /*
@@ -8,7 +10,7 @@
 
 // * setTimeout est une fonction asynchrone, elle ne bloque pas le déroulement du script en attendant de se déclencher.
 setTimeout(function () {
-    console.log('coucou');
+    console.log('message declenché après 3 secondes');
 }, 3000);
 
 // * fetch est une fonction asynchrone qui permet de récupérer des données depuis un serveur.
@@ -19,7 +21,7 @@ fetch('./js/data/data.json')
         return response.json();
     })
     .then((data) => {
-        console.log(data);
+        // console.log(data);
     })
     .catch((error) => {
         console.log(error);
@@ -28,13 +30,50 @@ fetch('./js/data/data.json')
 // TODO EXERCICE
 // Récupérer les données de l'api https://jsonplaceholder.typicode.com/posts
 // Afficher les données dans la page
+
+
 fetch('https://jsonplaceholder.typicode.com/posts')
-    .then((response) => {
-        return response.json();
+    .then((posts) => {
+        return posts.json();
     })
-    .then((data) => {
-        // dans une div il y aura  le titre dans un h2 et le contenu dans un p et vous l'affichez dans la page
+    .then((posts) => {
+        displayPosts(posts)
     })
     .catch((error) => {
         console.log(error);
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const foreachPerso = function (array, pull) {
+//     for (let i = 0; i < array.length; i++) {
+//         pull(array[i]);
+//     }
+// };
+
+// foreachPerso([2,5], function(x){
+//     console.log(x*2);
+// })
+
+// const resp = add();
+
